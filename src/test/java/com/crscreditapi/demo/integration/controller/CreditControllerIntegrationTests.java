@@ -11,7 +11,7 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @ActiveProfiles("test")
 @SpringBootTest
 @Testcontainers
-public class CreditControllerIntTests {
+public class CreditControllerIntegrationTests {
 
     @Autowired
     private CreditController creditController;
