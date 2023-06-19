@@ -1,4 +1,4 @@
-package com.crscreditapi.demo;
+package com.crscreditapi.demo.unit;
 
 import org.junit.jupiter.api.Test;
 
