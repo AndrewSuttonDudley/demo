@@ -1,5 +1,6 @@
-package com.crscreditapi.demo;
+package com.crscreditapi.demo.integration;
 
+import com.crscreditapi.demo.DemoApplication;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
@@ -12,11 +13,10 @@ public class TestDemoApplication {
     @Bean
     @ServiceConnection
     MySQLContainer<?> mysqlContainer() {
-        return new MySQLContainer<>("mysql:latest");
+        return new MySQLContainer<>("mysql:8.0.33");
     }
 
     public static void main(String[] args) {
         SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
     }
-
 }

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  mysql:
+    image: 'mysql:8.0.33'
+    environment:
+      - 'MYSQL_ROOT_PASSWORD=demo'
+      - 'MYSQL_DATABASE=demo'
+      - 'MYSQL_USER=demo'
+      - 'MYSQL_PASSWORD=demo'
+    ports:
+      - '3306:3306'
+    networks:
+      - demo-network
+
+  demo:
+    build: .
+    #    image: 'sleepyheadlabs-demo:latest'
+    depends_on:
+      - mysql
+    environment:
+      - 'spring.datasource.url=jdbc:mysql://mysql/demo'
+    ports:
+      - '8080:8080'
+    networks:
+      - demo-network
+
+networks:
+  demo-network:
