@@ -18,6 +18,6 @@ public class CreditControllerIntegrationTests {
 
     @Test
     public void testGetCreditRequestById() {
-        assertEquals("Hello, World!", creditController.getCreditRequestById("1"));
+        assertEquals("Hello, World!", creditController.getCreditRequestById(1L));
     }
 }
