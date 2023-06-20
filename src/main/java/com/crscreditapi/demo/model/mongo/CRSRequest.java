@@ -3,6 +3,7 @@ package com.crscreditapi.demo.model.mongo;
 import com.crscreditapi.demo.dto.crs.EquifaxRequestDto;
 import com.crscreditapi.demo.dto.crs.EquifaxResponseDto;
 import com.crscreditapi.demo.enumeration.Vendor;
+import com.crscreditapi.demo.model.BaseModel;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import org.springframework.http.HttpHeaders;
 import java.time.LocalDateTime;
 
 @Document(collection = "crsRequests")
-public class CRSRequest {
+public class CRSRequest extends BaseModel {
 
     @Id
     private String id;

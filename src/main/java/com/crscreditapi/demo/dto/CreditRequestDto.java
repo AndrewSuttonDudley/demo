@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 
 public class CreditRequestDto extends AbstractDto {
 
+    private Long id;
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endDate;
 
@@ -23,7 +25,15 @@ public class CreditRequestDto extends AbstractDto {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startDate;
 
-   private CreditRequestStatus status;
+    private CreditRequestStatus status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public LocalDateTime getEndDate() {
         return endDate;

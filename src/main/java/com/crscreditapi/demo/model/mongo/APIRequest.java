@@ -4,6 +4,7 @@ import com.crscreditapi.demo.dto.CreditRequestDto;
 import com.crscreditapi.demo.dto.crs.EquifaxRequestDto;
 import com.crscreditapi.demo.enumeration.CreditRequestSource;
 import com.crscreditapi.demo.enumeration.Vendor;
+import com.crscreditapi.demo.model.BaseModel;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
@@ -14,7 +15,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Document(collection = "apiRequests")
-public class APIRequest {
+public class APIRequest extends BaseModel {
 
     @Id
     private String id;

@@ -1,10 +1,11 @@
 package com.crscreditapi.demo.model.mongo;
 
+import com.crscreditapi.demo.model.BaseModel;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class AbstractMongoDBModel {
+public class AbstractMongoDBModel extends BaseModel {
 
     @Id
     protected String id;

@@ -1,6 +1,7 @@
 package com.crscreditapi.demo.mapper;
 
 import com.crscreditapi.demo.dto.AbstractDto;
+import com.crscreditapi.demo.model.BaseModel;
 import com.crscreditapi.demo.model.mysql.AbstractMySQLModel;
 import org.mapstruct.MappingTarget;
 import org.springframework.data.domain.Page;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-public abstract class AbstractMapper<ENTITY extends AbstractMySQLModel, DTO extends AbstractDto> {
+public abstract class AbstractMapper<ENTITY extends BaseModel, DTO extends AbstractDto> {
 
     public abstract ENTITY map(DTO dto);
 
