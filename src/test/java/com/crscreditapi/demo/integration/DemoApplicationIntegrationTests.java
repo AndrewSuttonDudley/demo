@@ -11,6 +11,6 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 class DemoApplicationIntegrationTests {
 
 //    @Test
-    void contextLoads() {
-    }
+//    void contextLoads() {
+//    }
 }

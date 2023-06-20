@@ -14,14 +14,14 @@ public class TestDemoApplication {
 
 //    @Bean
 //    @ServiceConnection
-    static MySQLContainer<?> mysqlContainer() {
-        return new MySQLContainer<>("mysql:8.0.33")
-                .withDatabaseName("demo")
-                .withUsername("demo")
-                .withPassword("demo");
-    }
-
-    public static void main(String[] args) {
-        SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
-    }
+//    static MySQLContainer<?> mysqlContainer() {
+//        return new MySQLContainer<>("mysql:8.0.33")
+//                .withDatabaseName("demo")
+//                .withUsername("demo")
+//                .withPassword("demo");
+//    }
+//
+//    public static void main(String[] args) {
+//        SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
+//    }
 }
