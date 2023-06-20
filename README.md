@@ -15,7 +15,7 @@ This repository contains the solution for the CRS technical task. The objective 
 
 ## Solution Overview
 
-This solution repository contains the source code, documentation, and additional resources required to run and test the Spring Boot application. The solution (mostly) adheres to the specified requirements and implements the necessary functionalities such as CRS API integration, logging, caching, and database storage.
+This solution repository contains the source code, documentation, and additional resources required to run and test the Spring Boot application. The solution (mostly) adheres to the specified requirements and implements the necessary functionalities such as CRS API integration, logging, caching, and database storage. It is built using Java 17, Spring 6, and Spring Boot 3.1.
 
 ## Architecture
 
