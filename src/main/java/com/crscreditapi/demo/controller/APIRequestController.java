@@ -1,5 +1,7 @@
 package com.crscreditapi.demo.controller;
 
+import com.crscreditapi.demo.dto.APIRequestDto;
+import com.crscreditapi.demo.mapper.APIRequestMapper;
 import com.crscreditapi.demo.model.mongo.APIRequest;
 import com.crscreditapi.demo.service.APIRequestService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,15 +14,19 @@ import java.util.List;
 @RequestMapping("/api-requests")
 public class APIRequestController {
 
+    private final APIRequestMapper apiRequestMapper;
+
     private final APIRequestService apiRequestService;
 
-    public APIRequestController(APIRequestService apiRequestService) {
+    public APIRequestController(APIRequestMapper apiRequestMapper,
+                                APIRequestService apiRequestService) {
+        this.apiRequestMapper = apiRequestMapper;
         this.apiRequestService = apiRequestService;
     }
 
     @GetMapping
-    public List<APIRequest> findAll() {
-        return apiRequestService.findAll();
+    public List<APIRequestDto> findAll() {
+        return apiRequestMapper.list(apiRequestService.findAll());
     }
 
 //    @GetMapping
