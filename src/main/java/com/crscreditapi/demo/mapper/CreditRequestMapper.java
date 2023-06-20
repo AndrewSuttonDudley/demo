@@ -2,7 +2,7 @@ package com.crscreditapi.demo.mapper;
 
 import com.crscreditapi.demo.config.MapStructConfig;
 import com.crscreditapi.demo.dto.CreditRequestDto;
-import com.crscreditapi.demo.model.CreditRequest;
+import com.crscreditapi.demo.model.mysql.CreditRequest;
 import org.mapstruct.Mapper;
 import org.springframework.stereotype.Service;
 

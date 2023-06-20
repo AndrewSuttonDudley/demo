@@ -1,25 +1,34 @@
-package com.crscreditapi.demo.dto;
+package com.crscreditapi.demo.model.mysql;
 
 import com.crscreditapi.demo.enumeration.CreditRequestSource;
 import com.crscreditapi.demo.enumeration.CreditRequestStatus;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
-public class CreditRequestDto extends AbstractDto {
+@Entity
+@Table(name = "credit_requests")
+public class CreditRequest extends AbstractMySQLModel {
 
+    @Column(name = "end_date")
     private LocalDateTime endDate;
 
+    @Column(name = "pdf_report_id")
     private String pdfReportId;
 
+    @Column(name = "request_date")
     private LocalDateTime requestDate;
 
+    @Enumerated(EnumType.STRING)
     private CreditRequestSource source;
 
     private String ssn;
 
+    @Column(name = "start_date")
     private LocalDateTime startDate;
 
-   private CreditRequestStatus status;
+    @Enumerated(EnumType.STRING)
+    private CreditRequestStatus status;
 
     public LocalDateTime getEndDate() {
         return endDate;
