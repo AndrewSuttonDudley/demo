@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 @Document(collection = "apiRequests")
-public class ApiRequest {
+public class APIRequest {
 
     @Id
     private String id;

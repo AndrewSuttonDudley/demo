@@ -32,15 +32,15 @@ public class CRSConnector extends AbstractConnector {
 
 
     @Async
-    public CompletableFuture<EquifaxResponseDto> postEquifaxCreditReportRequest(EquifaxRequestDto request) {
+    public CompletableFuture<EquifaxResponseDto> postEquifaxCreditReportRequest(EquifaxRequestDto requestBody) {
         AuthResponseDto authResponse = authenticate(getAuthrequest());
-        logger.info("Authenticated and received token: " + authResponse.getToken());
+//        logger.info("Authenticated and received token: " + authResponse.getToken());
 
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(authResponse.getToken());
 
-        EquifaxResponseDto response = post("/equifax/credit-report", request, EquifaxResponseDto.class, headers, null);
-        response.setCreditRequestId(request.getCreditRequestId());
+        EquifaxResponseDto response = post("/equifax/credit-report", requestBody, EquifaxResponseDto.class, headers, null);
+        response.setCreditRequestId(requestBody.getCreditRequestId());
 
         return CompletableFuture.completedFuture(response);
     }

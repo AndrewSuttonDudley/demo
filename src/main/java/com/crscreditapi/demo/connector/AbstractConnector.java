@@ -45,12 +45,6 @@ public abstract class AbstractConnector {
 
         HttpEntity<Object> entity = new HttpEntity<>(requestBody, headers);
 
-        try {
-            logger.info(new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(entity));
-        } catch (Exception e) {
-            logger.error("Shouldn' happen", e);
-        }
-
         ResponseEntity<T> response;
         try {
             response = restTemplate.exchange(getHost() + path, HttpMethod.POST, entity, clazz, uriVariables);

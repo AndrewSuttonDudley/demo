@@ -94,7 +94,6 @@ public class CreditRequestService {
         crsConnector.postEquifaxCreditReportRequest(equifaxRequest)
                 .thenAccept(equifaxResponse -> {
                     logger.info("Returned from async method");
-                    logger.info("equifaxResponse.getCreditRequestId(): " + equifaxResponse.getCreditRequestId());
                     CreditRequest savedCreditRequest = creditRequestRepository.findById(equifaxResponse.getCreditRequestId()).orElseThrow(() -> new RuntimeException("CreditRequest not found. This should never happen"));
                     savedCreditRequest.setEndDate(LocalDateTime.now());
                     savedCreditRequest.setPdfReportId(equifaxResponse.getPdfReportId());

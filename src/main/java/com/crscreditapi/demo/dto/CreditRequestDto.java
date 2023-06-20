@@ -2,21 +2,25 @@ package com.crscreditapi.demo.dto;
 
 import com.crscreditapi.demo.enumeration.CreditRequestSource;
 import com.crscreditapi.demo.enumeration.CreditRequestStatus;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;
 
 public class CreditRequestDto extends AbstractDto {
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime endDate;
 
     private String pdfReportId;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime requestDate;
 
     private CreditRequestSource source;
 
     private String ssn;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime startDate;
 
    private CreditRequestStatus status;
