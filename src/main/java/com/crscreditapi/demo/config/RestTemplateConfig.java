@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Configuration
+// This class is not used in the solution, but it was left in for conversational purposes
 public class RestTemplateConfig {
 
     Logger logger = LoggerFactory.getLogger(RestTemplateConfig.class);;

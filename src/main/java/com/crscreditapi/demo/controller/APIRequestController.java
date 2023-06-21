@@ -2,7 +2,6 @@ package com.crscreditapi.demo.controller;
 
 import com.crscreditapi.demo.dto.APIRequestDto;
 import com.crscreditapi.demo.mapper.APIRequestMapper;
-import com.crscreditapi.demo.model.mongo.APIRequest;
 import com.crscreditapi.demo.service.APIRequestService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

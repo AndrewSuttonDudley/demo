@@ -9,19 +9,19 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.MySQLContainer;
 
-//@TestConfiguration(proxyBeanMethods = false)
+@TestConfiguration(proxyBeanMethods = false)
 public class TestDemoApplication {
 
-//    @Bean
-//    @ServiceConnection
-//    static MySQLContainer<?> mysqlContainer() {
-//        return new MySQLContainer<>("mysql:8.0.33")
-//                .withDatabaseName("demo")
-//                .withUsername("demo")
-//                .withPassword("demo");
-//    }
-//
-//    public static void main(String[] args) {
-//        SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
-//    }
+    @Bean
+    @ServiceConnection
+    static MySQLContainer<?> mysqlContainer() {
+        return new MySQLContainer<>("mysql:8.0.33")
+                .withDatabaseName("demo")
+                .withUsername("demo")
+                .withPassword("demo");
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.from(DemoApplication::main).with(TestDemoApplication.class).run(args);
+    }
 }

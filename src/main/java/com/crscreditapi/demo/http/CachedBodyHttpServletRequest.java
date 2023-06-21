@@ -7,6 +7,7 @@ import org.springframework.util.StreamUtils;
 
 import java.io.*;
 
+// This class is not used in the solution, but it was left in for conversational purposes
 public class CachedBodyHttpServletRequest extends HttpServletRequestWrapper {
 
     private byte[] cachedBody;

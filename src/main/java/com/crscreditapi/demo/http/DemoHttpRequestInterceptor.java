@@ -8,6 +8,7 @@ import org.springframework.http.client.ClientHttpResponse;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+// This class is not used in the solution, but it was left in for conversational purposes
 public class DemoHttpRequestInterceptor implements ClientHttpRequestInterceptor {
 
     @Override

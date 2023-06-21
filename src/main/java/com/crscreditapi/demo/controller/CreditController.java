@@ -27,11 +27,6 @@ public class CreditController {
         return creditRequestMapper.map(creditRequestService.findCreditRequestById(id));
     }
 
-    @GetMapping("/requests")
-    public CreditRequestDto getCreditRequests(@RequestParam(value = "pdfReportId", required = false) String pdfReportId) {
-        return creditRequestMapper.map(creditRequestService.findCreditRequestByPdfReportId(pdfReportId));
-    }
-
     @PostMapping("/requests")
     public CreditRequestDto postCreditRequest(@RequestBody EquifaxRequestDto request,
                                               @RequestHeader Map<String, String> headers) {
