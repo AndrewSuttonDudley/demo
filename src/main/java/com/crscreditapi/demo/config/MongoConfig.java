@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,6 +29,11 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
         final MongoClientSettings.Builder mongoClientSettings = MongoClientSettings.builder().applyConnectionString(connectionString)
                 .applyToConnectionPoolSettings(builder -> builder.applySettings(connectionPoolSettings()));
         return MongoClients.create(mongoClientSettings.build());
+    }
+
+    @Bean
+    public MongoTemplate mongoTemplate() throws Exception {
+        return new MongoTemplate(mongoClient(), database);
     }
 
     private ConnectionPoolSettings connectionPoolSettings() {

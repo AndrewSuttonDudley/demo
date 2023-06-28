@@ -6,8 +6,6 @@ import com.crscreditapi.demo.mapper.CreditRequestMapper;
 import com.crscreditapi.demo.service.CreditRequestService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/credit")
 public class CreditController {
@@ -28,8 +26,7 @@ public class CreditController {
     }
 
     @PostMapping("/requests")
-    public CreditRequestDto postCreditRequest(@RequestBody EquifaxRequestDto request,
-                                              @RequestHeader Map<String, String> headers) {
+    public CreditRequestDto postCreditRequest(@RequestBody EquifaxRequestDto request) {
         return creditRequestMapper.map(creditRequestService.submitCreditRequest(request));
     }
 }

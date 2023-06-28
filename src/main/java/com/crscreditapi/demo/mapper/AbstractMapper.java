@@ -2,7 +2,6 @@ package com.crscreditapi.demo.mapper;
 
 import com.crscreditapi.demo.dto.AbstractDto;
 import com.crscreditapi.demo.model.BaseModel;
-import com.crscreditapi.demo.model.mysql.AbstractMySQLModel;
 import org.mapstruct.MappingTarget;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;

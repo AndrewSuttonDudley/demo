@@ -1,14 +1,12 @@
 package com.crscreditapi.demo.dto.crs;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 public class EquifaxResponseDto {
 
     private Long creditRequestId;
 
     private String pdfReportId;
 
-    private JsonNode data;
+    private Object data;
 
     public Long getCreditRequestId() {
         return creditRequestId;
@@ -26,11 +24,11 @@ public class EquifaxResponseDto {
         this.pdfReportId = pdfReportId;
     }
 
-    public JsonNode getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(JsonNode data) {
+    public void setData(Object data) {
         this.data = data;
     }
 }

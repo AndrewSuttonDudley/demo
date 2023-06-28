@@ -11,7 +11,6 @@ import com.crscreditapi.demo.repository.CreditRequestRepository;
 import com.crscreditapi.demo.util.PageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -52,15 +51,15 @@ public class CreditRequestService {
         LocalDateTime thisTimeYesterday = LocalDateTime.now().minusDays(1L);
         Pageable pageable = PageUtil.of(0, 1, "startDate", "desc");
 
-        Page<CreditRequest> creditRequestPage = creditRequestRepository.findAllBySsnAndStartDateGreaterThanAndStatus(
-                        equifaxRequest.getSsn(),
-                        thisTimeYesterday,
-                        CreditRequestStatus.COMPLETED,
-                        pageable);
-
-        if (creditRequestPage.getTotalElements() > 0) {
-            return getCachedEquifaxResponse(equifaxRequest, creditRequestPage.getContent().get(0));
-        }
+//        Page<CreditRequest> creditRequestPage = creditRequestRepository.findAllBySsnAndStartDateGreaterThanAndStatus(
+//                        equifaxRequest.getSsn(),
+//                        thisTimeYesterday,
+//                        CreditRequestStatus.COMPLETED,
+//                        pageable);
+//
+//        if (creditRequestPage.getTotalElements() > 0) {
+//            return getCachedEquifaxResponse(equifaxRequest, creditRequestPage.getContent().get(0));
+//        }
 
         return submitNewCreditRequest(equifaxRequest);
     }

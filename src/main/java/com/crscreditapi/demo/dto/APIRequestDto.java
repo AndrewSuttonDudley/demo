@@ -1,8 +1,8 @@
 package com.crscreditapi.demo.dto;
 
-import com.crscreditapi.demo.dto.crs.EquifaxRequestDto;
 import com.crscreditapi.demo.enumeration.CreditRequestSource;
 import com.crscreditapi.demo.enumeration.Vendor;
+import com.crscreditapi.demo.model.mongo.sub.RequestResponsePayload;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;
@@ -14,39 +14,20 @@ public class APIRequestDto extends AbstractDto {
 
     private Long creditRequestId;
 
-    private Map<String, String> requestHeaders;
-
-    private EquifaxRequestDto request;
+    private RequestResponsePayload requestBody;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime requestDate;
 
-    private CreditRequestDto response;
+    private Map<String, String> requestHeaders;
+
+    private RequestResponsePayload responseBody;
+
+    private Map<String, String> responseHeaders;
 
     private CreditRequestSource source;
 
     private Vendor vendor;
-
-    public APIRequestDto() {
-    }
-
-    public APIRequestDto(String id,
-                         Long creditRequestId,
-                         Map<String, String> requestHeaders,
-                         EquifaxRequestDto request,
-                         LocalDateTime requestDate,
-                         CreditRequestDto response,
-                         CreditRequestSource source,
-                         Vendor vendor) {
-        this.id = id;
-        this.creditRequestId = creditRequestId;
-        this.requestHeaders = requestHeaders;
-        this.request = request;
-        this.requestDate = requestDate;
-        this.response = response;
-        this.source = source;
-        this.vendor = vendor;
-    }
 
     public String getId() {
         return id;
@@ -64,20 +45,12 @@ public class APIRequestDto extends AbstractDto {
         this.creditRequestId = creditRequestId;
     }
 
-    public Map<String, String> getRequestHeaders() {
-        return requestHeaders;
+    public RequestResponsePayload getRequestBody() {
+        return requestBody;
     }
 
-    public void setRequestHeaders(Map<String, String> requestHeaders) {
-        this.requestHeaders = requestHeaders;
-    }
-
-    public EquifaxRequestDto getRequest() {
-        return request;
-    }
-
-    public void setRequest(EquifaxRequestDto request) {
-        this.request = request;
+    public void setRequestBody(RequestResponsePayload requestBody) {
+        this.requestBody = requestBody;
     }
 
     public LocalDateTime getRequestDate() {
@@ -88,12 +61,28 @@ public class APIRequestDto extends AbstractDto {
         this.requestDate = requestDate;
     }
 
-    public CreditRequestDto getResponse() {
-        return response;
+    public Map<String, String> getRequestHeaders() {
+        return requestHeaders;
     }
 
-    public void setResponse(CreditRequestDto response) {
-        this.response = response;
+    public void setRequestHeaders(Map<String, String> requestHeaders) {
+        this.requestHeaders = requestHeaders;
+    }
+
+    public RequestResponsePayload getResponseBody() {
+        return responseBody;
+    }
+
+    public void setResponseBody(RequestResponsePayload responseBody) {
+        this.responseBody = responseBody;
+    }
+
+    public Map<String, String> getResponseHeaders() {
+        return responseHeaders;
+    }
+
+    public void setResponseHeaders(Map<String, String> responseHeaders) {
+        this.responseHeaders = responseHeaders;
     }
 
     public CreditRequestSource getSource() {

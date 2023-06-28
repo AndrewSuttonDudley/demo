@@ -1,29 +1,21 @@
-package com.crscreditapi.demo.model.mongo;
+package com.crscreditapi.demo.dto;
 
 import com.crscreditapi.demo.enumeration.Vendor;
-import com.crscreditapi.demo.model.BaseModel;
 import com.crscreditapi.demo.model.mongo.sub.RequestResponsePayload;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDateTime;
 import java.util.Map;
 
-@Document(collection = "crsRequests")
-public class CRSRequest extends BaseModel {
+public class CRSRequestDto extends AbstractDto {
 
-    @Id
     private String id;
 
-    @Field
     private Long creditRequestId;
 
     private RequestResponsePayload requestBody;
 
-    @Field
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime requestDate;
 
     private Map<String, String> requestHeaders;
@@ -32,8 +24,6 @@ public class CRSRequest extends BaseModel {
 
     private Map<String, String> responseHeaders;
 
-    @Field
-    @Enumerated(EnumType.STRING)
     private Vendor vendor;
 
     public String getId() {

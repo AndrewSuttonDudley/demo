@@ -1,10 +1,9 @@
 package com.crscreditapi.demo.model.mongo;
 
-import com.crscreditapi.demo.dto.CreditRequestDto;
-import com.crscreditapi.demo.dto.crs.EquifaxRequestDto;
 import com.crscreditapi.demo.enumeration.CreditRequestSource;
 import com.crscreditapi.demo.enumeration.Vendor;
 import com.crscreditapi.demo.model.BaseModel;
+import com.crscreditapi.demo.model.mongo.sub.RequestResponsePayload;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
@@ -23,14 +22,16 @@ public class APIRequest extends BaseModel {
     @Field
     private Long creditRequestId;
 
-    private Map<String, String> requestHeaders;
-
-    private EquifaxRequestDto request;
+    private RequestResponsePayload requestBody;
 
     @Field
     private LocalDateTime requestDate;
 
-    private CreditRequestDto response;
+    private Map<String, String> requestHeaders;
+
+    private RequestResponsePayload responseBody;
+
+    private Map<String, String> responseHeaders;
 
     @Field
     private CreditRequestSource source;
@@ -55,20 +56,12 @@ public class APIRequest extends BaseModel {
         this.creditRequestId = creditRequestId;
     }
 
-    public Map<String, String> getRequestHeaders() {
-        return requestHeaders;
+    public RequestResponsePayload getRequestBody() {
+        return requestBody;
     }
 
-    public void setRequestHeaders(Map<String, String> requestHeaders) {
-        this.requestHeaders = requestHeaders;
-    }
-
-    public EquifaxRequestDto getRequest() {
-        return request;
-    }
-
-    public void setRequest(EquifaxRequestDto request) {
-        this.request = request;
+    public void setRequestBody(RequestResponsePayload requestBody) {
+        this.requestBody = requestBody;
     }
 
     public LocalDateTime getRequestDate() {
@@ -79,12 +72,28 @@ public class APIRequest extends BaseModel {
         this.requestDate = requestDate;
     }
 
-    public CreditRequestDto getResponse() {
-        return response;
+    public Map<String, String> getRequestHeaders() {
+        return requestHeaders;
     }
 
-    public void setResponse(CreditRequestDto response) {
-        this.response = response;
+    public void setRequestHeaders(Map<String, String> requestHeaders) {
+        this.requestHeaders = requestHeaders;
+    }
+
+    public RequestResponsePayload getResponseBody() {
+        return responseBody;
+    }
+
+    public void setResponseBody(RequestResponsePayload responseBody) {
+        this.responseBody = responseBody;
+    }
+
+    public Map<String, String> getResponseHeaders() {
+        return responseHeaders;
+    }
+
+    public void setResponseHeaders(Map<String, String> responseHeaders) {
+        this.responseHeaders = responseHeaders;
     }
 
     public CreditRequestSource getSource() {

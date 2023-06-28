@@ -1,6 +1,6 @@
 package com.crscreditapi.demo.connector;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.crscreditapi.demo.http.DemoRestTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.*;
@@ -31,7 +31,7 @@ public abstract class AbstractConnector {
     }
 
     protected <T> T post(String path, Object requestBody, Class<T> clazz, HttpHeaders headers, Map<String, String> uriVariables) {
-        RestTemplate restTemplate = new RestTemplate();
+        DemoRestTemplate restTemplate = new DemoRestTemplate();
 
         if (headers == null) {
             headers = new HttpHeaders();
